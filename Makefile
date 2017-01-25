@@ -1,19 +1,21 @@
 REPO = msoedov/pyflame
 
-default: build_2 build_3
-
-build_2:
-	@docker build -t $(REPO):2.7 .
-
-build_3:
-	@docker build -t $(REPO):3.5 -f Dockerfile.py3 .
+default: flamegraph.pl template build
 
 
-publish:
-	@docker push $(REPO):2.7
-	@docker push $(REPO):3.5
+build:
+	for number in 2.7 3.5 3.6 ; do \
+		docker build -t $(REPO):$$number -f $$number.Dockerfile .; \
+	done
 
+push:
+	for tag in 2.7 3.5 3.6 ; do \
+		docker push $(REPO):$$tag; \
+	done
 
 flamegraph.pl:
 	@wget https://raw.githubusercontent.com/brendangregg/FlameGraph/master/flamegraph.pl
 	@chmod +x flamegraph.pl
+
+template:
+	@./template.sh
