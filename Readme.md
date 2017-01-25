@@ -1,7 +1,7 @@
 # Docker pyflame
 
 [![](https://images.microbadger.com/badges/image/msoedov/pyflame:2.7.svg)](https://microbadger.com/images/msoedov/pyflame:2.7 "Get your own image badge on microbadger.com")
-  [![Docker Pulls](https://img.shields.io/docker/pulls/msoedov/pyflame.svg?maxAge=2592000)](https://hub.docker.com/r/zzrot/alpine-caddy/)
+ [![Docker Pulls](https://img.shields.io/docker/pulls/msoedov/pyflame.svg?maxAge=2592000)](https://hub.docker.com/r/msoedov/pyflame/)
 
 This is a [Docker](https://www.docker.com/) image for [Pyflame](https://github.com/uber/pyflame). This image runs with a base of [Python:2.7/3.5/3.6](https://hub.docker.com/_/python/) making it extremely convinient for development environment.
 

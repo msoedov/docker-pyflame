@@ -1,4 +1,4 @@
-FROM python:%%VERSION%%
+FROM python:3.6
 
 MAINTAINER Alex Myasoedov <msoedov@gmail.com>
 
