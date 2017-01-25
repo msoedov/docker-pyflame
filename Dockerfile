@@ -10,3 +10,5 @@ RUN ./autogen.sh
 RUN ./configure
 RUN make
 RUN make install
+RUN rm -rf $WORKDIR
+COPY flamegraph.pl /usr/local/bin

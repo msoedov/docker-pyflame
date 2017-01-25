@@ -12,3 +12,8 @@ build_3:
 publish:
 	@docker push $(REPO):2.7
 	@docker push $(REPO):3.5
+
+
+flamegraph.pl:
+	@wget https://raw.githubusercontent.com/brendangregg/FlameGraph/master/flamegraph.pl
+	@chmod +x flamegraph.pl
