@@ -12,10 +12,12 @@ This image can also be found on [Docker Hub](https://hub.docker.com/r/msoedov/py
 
 ```shell
 
-docker run -it --cap-add SYS_PTRACE -v "$(pwd):/pyflame" msoedov/pyflame:2.7 bash
+docker run -it --pid=host --privileged --cap-add SYS_PTRACE -v "$(pwd):/pyflame" msoedov/pyflame:2.7 bash
 pyflame <PID> | flamegraph.pl > myprofile.svg
 
 ```
-Note: `--cap-add SYS_PTRACE` is required and denied by default within Docker images
+> * `--cap-add SYS_PTRACE` is required and denied by default within Docker images
+> * `--pid=host` is required to allow container access processes of host machine
+> * `--privileged` is required to solve `Failed to setns 4: Operation not permitted` problem
 
 This is the bare minimum needed to use this image. Although further customization is made easier with a docker-compose file.
